@@ -26,7 +26,7 @@
             authResource.verify2FACode(provider, code)
                 .then(function (data) {
                     userService.setAuthenticationSuccessful(data);
-                    $scope.submit(true);
+                    $scope.$parent.vm.onLogin();
                 }, function () { $scope.error2FA = "Invalid code entered." });
         };
     });
