@@ -44,7 +44,7 @@
             $scope.error2FA = "";
             twoFactorService.validateAndSaveGoogleAuth(code)
                 .then(function (response) {
-                    if (response.data === "true") {
+                    if (response.data === true) {
                         $scope.enabledText = "enabled";
                         $scope.enabled = true;
                         $scope.googleAuthEnabled = true;
@@ -59,7 +59,7 @@
         $scope.disable = function () {
             twoFactorService.disable()
                 .then(function (response) {
-                    if (response.data === "true") {
+                    if (response.data === true) {
                         $scope.enabledText = "disabled";
                         $scope.enabled = false;
                         $scope.googleAuthEnabled = false;
